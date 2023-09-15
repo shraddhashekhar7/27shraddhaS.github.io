@@ -1,0 +1,2253 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8" />
+        <meta http-equiv="x-ua-compatible" content="ie=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+        <style data-href="/styles.895a83adf7f7ef1a24ec.css">
+            .calendar {
+                border: 1px solid #ddd;
+                border-radius: 3px;
+                min-height: 243px;
+                text-align: center;
+                background: #fff;
+                margin-top: 50px;
+                margin-bottom: 50px;
+                color: #000;
+                width: 100%;
+            }
+            .calendar-graph text.month,
+            .calendar-graph text.wday {
+                font-size: 10px;
+                fill: #aaa;
+            }
+            .contrib-legend {
+                text-align: right;
+                padding: 0 14px 10px 0;
+                display: inline-block;
+                float: right;
+            }
+            .contrib-legend .legend {
+                display: inline-block;
+                list-style: none;
+                margin: 0 5px;
+                position: relative;
+                bottom: -1px;
+                padding: 0;
+            }
+            .contrib-legend .legend li {
+                display: inline-block;
+                width: 10px;
+                height: 10px;
+            }
+            .text-small {
+                font-size: 12px;
+                color: #767676;
+            }
+            .calendar-graph {
+                padding: 5px 0 0;
+                text-align: center;
+            }
+            .contrib-column {
+                padding: 15px 0;
+                text-align: center;
+                border-left: 1px solid #ddd;
+                border-top: 1px solid #ddd;
+                font-size: 11px;
+            }
+            .contrib-column-first {
+                border-left: 0;
+            }
+            .table-column {
+                display: table-cell;
+                width: 1%;
+                padding-right: 10px;
+                padding-left: 10px;
+                vertical-align: top;
+            }
+            .contrib-number {
+                font-weight: 300;
+                line-height: 1.3em;
+                font-size: 24px;
+                display: block;
+                color: #333;
+            }
+            .calendar img.spinner {
+                width: 70px;
+                margin-top: 50px;
+                min-height: 70px;
+            }
+            .monospace {
+                text-align: center;
+                color: #000;
+                font-family: monospace;
+            }
+            .monospace a {
+                color: #1d75ab;
+                text-decoration: none;
+            }
+            .contrib-footer {
+                font-size: 11px;
+                padding: 0 10px 12px;
+                text-align: left;
+                width: 100%;
+                box-sizing: border-box;
+                height: 26px;
+            }
+            .left.text-muted {
+                float: left;
+                margin-left: 9px;
+                color: #767676;
+            }
+            .left.text-muted a {
+                color: #4078c0;
+                text-decoration: none;
+            }
+            .left.text-muted a:hover,
+            .monospace a:hover {
+                text-decoration: underline;
+            }
+            h2.f4.text-normal.mb-3 {
+                display: none;
+            }
+            .float-left.text-gray {
+                float: left;
+            }
+            #user-activity-overview {
+                display: none;
+            }
+        </style>
+        <meta name="generator" content="Gatsby 2.24.47" />
+        <link as="script" rel="preload" href="/webpack-runtime-a9fdbf7a5e8f46290a13.js" />
+        <link as="script" rel="preload" href="/framework-0e8501c0599d79803b4b.js" />
+        <link as="script" rel="preload" href="/app-1843ffefc5b524e69db0.js" />
+        <link as="script" rel="preload" href="/styles-455b3516bc49bc6504de.js" />
+        <link as="script" rel="preload" href="/1bfc9850-56a8082d94d5a0f2dd01.js" />
+        <link as="script" rel="preload" href="/0c428ae2-89d3e8bed617cf891f46.js" />
+        <link as="script" rel="preload" href="/05d954cf-17e9c52612af79756b79.js" />
+        <link as="script" rel="preload" href="/d64684d8-0dafd15ed7bd85b9aaec.js" />
+        <link as="script" rel="preload" href="/commons-f38039c83f9248e0f6f9.js" />
+        <link as="script" rel="preload" href="/446e68f2a176b92e4ab947dd6a265583ae9861f5-cfef72f9a409639f2787.js" />
+        <link as="script" rel="preload" href="/78febaf89a5145c63b3dd69f5d038a06cb66733f-0b347745e0ed0d6fb464.js" />
+        <link as="script" rel="preload" href="/component---src-pages-index-js-302c720238b1a8730838.js" />
+        <link as="fetch" rel="preload" href="/page-data/index/page-data.json" crossorigin="anonymous" />
+        <link as="fetch" rel="preload" href="/page-data/app-data.json" crossorigin="anonymous" />
+    </head>
+    <body>
+        <div id="___gatsby">
+            <div style="outline: none;" tabindex="-1" id="gatsby-focus-wrapper">
+                <style data-emotion="css-global 1syi0wy">
+                    html {
+                        line-height: 1.5;
+                        -webkit-text-size-adjust: 100%;
+                        font-family: system-ui, sans-serif;
+                        -webkit-font-smoothing: antialiased;
+                        text-rendering: optimizeLegibility;
+                        -moz-osx-font-smoothing: grayscale;
+                        touch-action: manipulation;
+                    }
+                    body {
+                        position: relative;
+                        min-height: 100%;
+                        font-feature-settings: "kern";
+                    }
+                    *,
+                    *::before,
+                    *::after {
+                        border-width: 0;
+                        border-style: solid;
+                        box-sizing: border-box;
+                    }
+                    main {
+                        display: block;
+                    }
+                    hr {
+                        border-top-width: 1px;
+                        box-sizing: content-box;
+                        height: 0;
+                        overflow: visible;
+                    }
+                    pre,
+                    code,
+                    kbd,
+                    samp {
+                        font-family: SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+                        font-size: 1em;
+                    }
+                    a {
+                        background-color: transparent;
+                        color: inherit;
+                        -webkit-text-decoration: inherit;
+                        text-decoration: inherit;
+                    }
+                    abbr[title] {
+                        border-bottom: none;
+                        -webkit-text-decoration: underline;
+                        text-decoration: underline;
+                        -webkit-text-decoration: underline dotted;
+                        -webkit-text-decoration: underline dotted;
+                        text-decoration: underline dotted;
+                    }
+                    b,
+                    strong {
+                        font-weight: bold;
+                    }
+                    small {
+                        font-size: 80%;
+                    }
+                    sub,
+                    sup {
+                        font-size: 75%;
+                        line-height: 0;
+                        position: relative;
+                        vertical-align: baseline;
+                    }
+                    sub {
+                        bottom: -0.25em;
+                    }
+                    sup {
+                        top: -0.5em;
+                    }
+                    img {
+                        border-style: none;
+                    }
+                    button,
+                    input,
+                    optgroup,
+                    select,
+                    textarea {
+                        font-family: inherit;
+                        font-size: 100%;
+                        line-height: 1.15;
+                        margin: 0;
+                    }
+                    button,
+                    input {
+                        overflow: visible;
+                    }
+                    button,
+                    select {
+                        text-transform: none;
+                    }
+                    button::-moz-focus-inner,
+                    [type="button"]::-moz-focus-inner,
+                    [type="reset"]::-moz-focus-inner,
+                    [type="submit"]::-moz-focus-inner {
+                        border-style: none;
+                        padding: 0;
+                    }
+                    fieldset {
+                        padding: 0.35em 0.75em 0.625em;
+                    }
+                    legend {
+                        box-sizing: border-box;
+                        color: inherit;
+                        display: table;
+                        max-width: 100%;
+                        padding: 0;
+                        white-space: normal;
+                    }
+                    progress {
+                        vertical-align: baseline;
+                    }
+                    textarea {
+                        overflow: auto;
+                    }
+                    [type="checkbox"],
+                    [type="radio"] {
+                        box-sizing: border-box;
+                        padding: 0;
+                    }
+                    [type="number"]::-webkit-inner-spin-button,
+                    [type="number"]::-webkit-outer-spin-button {
+                        -webkit-appearance: none !important;
+                    }
+                    input[type="number"] {
+                        -moz-appearance: textfield;
+                    }
+                    [type="search"] {
+                        -webkit-appearance: textfield;
+                        outline-offset: -2px;
+                    }
+                    [type="search"]::-webkit-search-decoration {
+                        -webkit-appearance: none !important;
+                    }
+                    ::-webkit-file-upload-button {
+                        -webkit-appearance: button;
+                        font: inherit;
+                    }
+                    details {
+                        display: block;
+                    }
+                    summary {
+                        display: -webkit-box;
+                        display: -webkit-list-item;
+                        display: -ms-list-itembox;
+                        display: list-item;
+                    }
+                    template {
+                        display: none;
+                    }
+                    [hidden] {
+                        display: none !important;
+                    }
+                    body,
+                    blockquote,
+                    dl,
+                    dd,
+                    h1,
+                    h2,
+                    h3,
+                    h4,
+                    h5,
+                    h6,
+                    hr,
+                    figure,
+                    p,
+                    pre {
+                        margin: 0;
+                    }
+                    button {
+                        background: transparent;
+                        padding: 0;
+                    }
+                    fieldset {
+                        margin: 0;
+                        padding: 0;
+                    }
+                    ol,
+                    ul {
+                        margin: 0;
+                        padding: 0;
+                    }
+                    textarea {
+                        resize: vertical;
+                    }
+                    button,
+                    [role="button"] {
+                        cursor: pointer;
+                    }
+                    button::-moz-focus-inner {
+                        border: 0 !important;
+                    }
+                    table {
+                        border-collapse: collapse;
+                    }
+                    h1,
+                    h2,
+                    h3,
+                    h4,
+                    h5,
+                    h6 {
+                        font-size: inherit;
+                        font-weight: inherit;
+                    }
+                    button,
+                    input,
+                    optgroup,
+                    select,
+                    textarea {
+                        padding: 0;
+                        line-height: inherit;
+                        color: inherit;
+                    }
+                    img,
+                    svg,
+                    video,
+                    canvas,
+                    audio,
+                    iframe,
+                    embed,
+                    object {
+                        display: block;
+                        vertical-align: middle;
+                    }
+                    img,
+                    video {
+                        max-width: 100%;
+                        height: auto;
+                    }
+                    [data-js-focus-visible] :focus:not([data-focus-visible-added]) {
+                        outline: none;
+                        box-shadow: none;
+                    }
+                    select::-ms-expand {
+                        display: none;
+                    }
+                </style>
+                <style data-emotion="css-global isde34">
+                    body {
+                        font-family: Roboto Condensed, system-ui, sans-serif;
+                        color: rgba(255, 255, 255, 0.92);
+                        background: #1a202c;
+                        -webkit-transition: background-color 0.2s;
+                        transition: background-color 0.2s;
+                        line-height: 1.5;
+                    }
+                    *::-webkit-input-placeholder {
+                        color: rgba(255, 255, 255, 0.24);
+                    }
+                    *::-moz-placeholder {
+                        color: rgba(255, 255, 255, 0.24);
+                    }
+                    *:-ms-input-placeholder {
+                        color: rgba(255, 255, 255, 0.24);
+                    }
+                    *::placeholder {
+                        color: rgba(255, 255, 255, 0.24);
+                    }
+                    *,
+                    *::before,
+                    ::after {
+                        border-color: rgba(255, 255, 255, 0.16);
+                        word-wrap: break-word;
+                    }
+                </style>
+                <style data-emotion="css 4jgnl2">
+                    .css-4jgnl2 {
+                        background-color: #1a202c;
+                        -webkit-position: sticky;
+                        position: sticky;
+                        top: 0;
+                        padding-top: 0.5rem;
+                        padding-bottom: 0.5rem;
+                        z-index: 5;
+                    }
+                </style>
+                <div class="css-4jgnl2">
+                    <style data-emotion="css 18yzu4t">
+                        .css-18yzu4t {
+                            width: 100%;
+                            margin-left: auto;
+                            margin-right: auto;
+                            padding-left: 1rem;
+                            padding-right: 1rem;
+                        }
+                        @media screen and (min-width: 600px) {
+                            .css-18yzu4t {
+                                max-width: 640px;
+                            }
+                        }
+                        @media screen and (min-width: 900px) {
+                            .css-18yzu4t {
+                                max-width: 768px;
+                            }
+                        }
+                        @media screen and (min-width: 1200px) {
+                            .css-18yzu4t {
+                                max-width: 1024px;
+                            }
+                        }
+                        @media screen and (min-width: 1500px) {
+                            .css-18yzu4t {
+                                max-width: 1280px;
+                            }
+                        }
+                    </style>
+                    <div class="chakra-container css-18yzu4t">
+                        <style data-emotion="css mjbegz">
+                            .css-mjbegz {
+                                display: -webkit-box;
+                                display: -webkit-flex;
+                                display: -ms-flexbox;
+                                display: flex;
+                                -webkit-align-items: center;
+                                -webkit-box-align: center;
+                                -ms-flex-align: center;
+                                align-items: center;
+                                -webkit-box-pack: justify;
+                                -webkit-justify-content: space-between;
+                                justify-content: space-between;
+                                -webkit-box-flex-wrap: wrap;
+                                -webkit-flex-wrap: wrap;
+                                -ms-flex-wrap: wrap;
+                                flex-wrap: wrap;
+                            }
+                        </style>
+                        <nav class="css-mjbegz">
+                            <a aria-current="page" class="navbar-brand logo" href="/">
+                                <style data-emotion="css hs2byf">
+                                    .css-hs2byf {
+                                        height: 30px;
+                                        margin-top: 0.25rem;
+                                    }
+                                </style>
+                            </a>
+                            <div class="css-68zbsl"></div>
+                            <div class="css-zvlnbl">
+                                <a href="#section1" class="css-168wrtx">About</a>
+                                <a href="#section2" class="css-168wrtx">Experience</a>
+                                <a href="#section3" class="css-168wrtx">Projects</a>
+<!--                                <a href="#section4" class="css-168wrtx">Papers</a>-->
+                                <a href="#section5" class="css-168wrtx">Blogs</a>
+                                <a href="#section6" class="css-168wrtx">Contact Me</a>
+                            </div>
+                            <style data-emotion="css 68zbsl">
+                                .css-68zbsl {
+                                    width: auto;
+                                    height: 50px;
+                                }
+                            </style>
+                            <div class="css-68zbsl"></div>
+                            <style data-emotion="css zvlnbl">
+                                .css-zvlnbl {
+                                    display: -webkit-box;
+                                    display: -webkit-flex;
+                                    display: -ms-flexbox;
+                                    display: flex;
+                                    -webkit-align-items: center;
+                                    -webkit-box-align: center;
+                                    -ms-flex-align: center;
+                                    align-items: center;
+                                    -webkit-flex-direction: row;
+                                    -ms-flex-direction: row;
+                                    flex-direction: row;
+                                }
+                                .css-zvlnbl > *:not(style) ~ *:not(style) {
+                                    -webkit-margin-start: 1rem;
+                                    margin-inline-start: 1rem;
+                                    margin-top: 0;
+                                }
+                            </style>
+                            <div class="chakra-stack css-zvlnbl">
+                                <style data-emotion="css 168wrtx">
+                                    .css-168wrtx {
+                                        -webkit-transition: all 0.15s ease-out;
+                                        transition: all 0.15s ease-out;
+                                        cursor: pointer;
+                                        -webkit-text-decoration: none;
+                                        text-decoration: none;
+                                        outline: none;
+                                        color: #cbd5e0;
+                                    }
+                                    .css-168wrtx:hover,
+                                    .css-168wrtx[data-hover] {
+                                        -webkit-text-decoration: none;
+                                        text-decoration: none;
+                                        color: #ffffff;
+                                    }
+                                    .css-168wrtx:focus,
+                                    .css-168wrtx[data-focus] {
+                                        box-shadow: none;
+                                    }
+                                </style>
+                            </div>
+                        </nav>
+                    </div>
+                </div>
+                <style data-emotion="css xhiru">
+                    .css-xhiru {
+                        width: 100%;
+                        margin-left: auto;
+                        margin-right: auto;
+                        padding-left: 1rem;
+                        padding-right: 1rem;
+                        margin-bottom: 1.5rem;
+                    }
+                    @media screen and (min-width: 600px) {
+                        .css-xhiru {
+                            max-width: 640px;
+                        }
+                    }
+                    @media screen and (min-width: 900px) {
+                        .css-xhiru {
+                            max-width: 768px;
+                        }
+                    }
+                    @media screen and (min-width: 1200px) {
+                        .css-xhiru {
+                            max-width: 1024px;
+                        }
+                    }
+                    @media screen and (min-width: 1500px) {
+                        .css-xhiru {
+                            max-width: 1280px;
+                        }
+                    }
+                </style>
+                <div class="chakra-container css-xhiru">
+                    <style data-emotion="css 9y5h2v">
+                        .css-9y5h2v {
+                            margin-top: 2rem;
+                            margin-bottom: 2rem;
+                            display: flex;
+                            flex-direction: column; /* Stack items vertically */
+                            align-items: center;
+                            justify-content: center;
+<!--                            align-items: center;-->
+                            height: 100%;
+                        }
+                    </style>
+                    <div class="css-9y5h2v">
+                        <style data-emotion="css 1n2g5i4">
+                            .css-1n2g5i4 {
+                                margin-top: 0.5rem;
+                                margin-bottom: 0.5rem;
+                            }
+                        </style>
+                        <div class="chakra-wrap css-1n2g5i4">
+                            <style data-emotion="css 25wskr">
+                                .css-25wskr {
+                                    display: -webkit-box;
+                                    display: -webkit-flex;
+                                    display: -ms-flexbox;
+                                    display: flex;
+                                    -webkit-box-flex-wrap: wrap;
+                                    -webkit-flex-wrap: wrap;
+                                    -ms-flex-wrap: wrap;
+                                    flex-wrap: wrap;
+                                    -webkit-box-pack: center;
+                                    -ms-flex-pack: center;
+                                    -webkit-justify-content: center;
+                                    justify-content: center;
+                                    -webkit-align-items: center;
+                                    -webkit-box-align: center;
+                                    -ms-flex-align: center;
+                                    align-items: center;
+                                    list-style-type: none;
+                                    padding: 0;
+                                    margin: calc(2rem / 2 * -1);
+                                }
+                                @media screen and (min-width: 600px) {
+                                    .css-25wskr {
+                                        -webkit-box-pack: left;
+                                        -ms-flex-pack: left;
+                                        -webkit-justify-content: left;
+                                        justify-content: left;
+                                    }
+                                }
+                            </style>
+                            <ul class="chakra-wrap__list css-25wskr">
+                                <style data-emotion="css 1j55w7z">
+                                    .css-1j55w7z {
+                                        display: -webkit-box;
+                                        display: -webkit-flex;
+                                        display: -ms-flexbox;
+                                        display: flex;
+                                        -webkit-align-items: flex-start;
+                                        -webkit-box-align: flex-start;
+                                        -ms-flex-align: flex-start;
+                                        align-items: flex-start;
+                                        margin: calc(2rem / 2);
+                                    }
+                                </style>
+                                <li class="chakra-wrap__listitem css-1j55w7z">
+                                    <style data-emotion="css 101q21o">
+                                        .css-101q21o {
+                                            border-radius: 9999px;
+                                            display: -webkit-inline-box;
+                                            display: -webkit-inline-flex;
+                                            display: -ms-inline-flexbox;
+                                            display: inline-flex;
+                                            -webkit-align-items: center;
+                                            -webkit-box-align: center;
+                                            -ms-flex-align: center;
+                                            align-items: center;
+                                            -webkit-box-pack: center;
+                                            -ms-flex-pack: center;
+                                            -webkit-justify-content: center;
+                                            justify-content: center;
+                                            text-align: center;
+                                            text-transform: uppercase;
+                                            font-weight: 500;
+                                            position: relative;
+                                            -webkit-flex-shrink: 0;
+                                            -ms-flex-negative: 0;
+                                            flex-shrink: 0;
+                                            background: #f36718;
+                                            color: #1a202c;
+                                            border-color: #1a202c;
+                                            vertical-align: top;
+                                            width: 8rem;
+                                            height: 8rem;
+                                            font-size: calc(8rem / 2.5);
+                                        }
+                                    </style>
+                                    <span class="chakra-avatar css-101q21o">
+
+                                        <style data-emotion="css 1e8yyfy">
+                                            .css-1e8yyfy {
+                                                font-size: calc(8rem / 2.5);
+                                                line-height: 8rem;
+                                            }
+                                        </style>
+
+                                        <style data-emotion="css 9r7v3q">
+                                            .css-9r7v3q {
+                                                border-radius: 50%;
+                                            }
+                                        </style>
+
+<!--                                        <div aria-label="Shraddha Shekhar" class="chakra-avatar__initials css-1e8yyfy">SS</div>-->
+                                        <img src="/static/me.jpg" alt="Shraddha Shekhar" class="chakra-avatar__img css-9r7v3q" id="section1">
+                                    </span>
+                                </li>
+                                <li class="chakra-wrap__listitem css-1j55w7z">
+                                    <style data-emotion="css 1icbxlb">
+                                        .css-1icbxlb {
+                                            text-align: center;
+                                        }
+                                        @media screen and (min-width: 600px) {
+                                            .css-1icbxlb {
+                                                text-align: left;
+                                            }
+                                        }
+                                    </style>
+                                    <div justify="[object Object]" class="css-1icbxlb">
+                                        <style data-emotion="css gz5ruc">
+                                            .css-gz5ruc {
+                                                font-family: Roboto Condensed, system-ui, sans-serif;
+                                                font-weight: 700;
+                                                font-size: 1.875rem;
+                                                line-height: 1.33;
+                                            }
+                                            @media screen and (min-width: 900px) {
+                                                .css-gz5ruc {
+                                                    font-size: 2.25rem;
+                                                    line-height: 1.2;
+                                                }
+                                            }
+                                        </style>
+                                        <h1 class="chakra-heading css-gz5ruc">Shraddha Shekhar</h1>
+                                        <style data-emotion="css 11w9t2p">
+                                            .css-11w9t2p {
+                                                color: #cbd5e0;
+                                                font-size: 1.125rem;
+                                            }
+                                        </style>
+                                        <p class="chakra-text css-11w9t2p">Software Developer</p>
+                                        <style data-emotion="css mv4tmv">
+                                            .css-mv4tmv {
+                                                -webkit-transition: all 0.15s ease-out;
+                                                transition: all 0.15s ease-out;
+                                                cursor: pointer;
+                                                -webkit-text-decoration: none;
+                                                text-decoration: none;
+                                                outline: none;
+                                                color: #a0aec0;
+                                                margin-top: 0.25rem;
+                                            }
+                                            .css-mv4tmv:hover,
+                                            .css-mv4tmv[data-hover] {
+                                                -webkit-text-decoration: none;
+                                                text-decoration: none;
+                                                color: #cbd5e0;
+                                            }
+                                            .css-mv4tmv:focus,
+                                            .css-mv4tmv[data-focus] {
+                                                box-shadow: none;
+                                            }
+                                        </style>
+                                        <a class="chakra-link css-mv4tmv" href="mailto: iamshraddhashekhar@gmail.com">iamshraddhashekhar@gmail.com</a>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="chakra-wrap css-0">
+                            <style data-emotion="css 1x7wcwl">
+                                .css-1x7wcwl {
+                                    display: -webkit-box;
+                                    display: -webkit-flex;
+                                    display: -ms-flexbox;
+                                    display: flex;
+
+                                    -webkit-box-flex-wrap: wrap;
+                                    -webkit-flex-wrap: wrap;
+                                    -ms-flex-wrap: wrap;
+                                    flex-wrap: wrap;
+                                    -webkit-box-pack: center;
+                                    -ms-flex-pack: center;
+                                    -webkit-justify-content: center;
+                                    justify-content: center;
+                                    -webkit-align-items: center;
+                                    -webkit-box-align: center;
+                                    -ms-flex-align: center;
+                                    align-items: center;
+                                    list-style-type: none;
+                                    padding: 0;
+                                    margin: calc(1.5rem / 2 * -1);
+                                    margin-left: 5rem;
+                                }
+                                @media screen and (min-width: 600px) {
+                                    .css-1x7wcwl {
+                                        -webkit-box-pack: left;
+                                        -ms-flex-pack: left;
+                                        -webkit-justify-content: left;
+                                        justify-content: left;
+                                    }
+                                }
+                            </style>
+                            <ul class="chakra-wrap__list css-1x7wcwl">
+                                <style data-emotion="css 10dnwi6">
+                                    .css-10dnwi6 {
+                                        display: -webkit-box;
+                                        display: -webkit-flex;
+                                        display: -ms-flexbox;
+                                        display: flex;
+                                        -webkit-align-items: flex-start;
+                                        -webkit-box-align: flex-start;
+                                        -ms-flex-align: flex-start;
+                                        align-items: flex-start;
+                                        margin: calc(1.5rem / 2);
+                                    }
+                                </style>
+                                <li class="chakra-wrap__listitem css-10dnwi6">
+                                    <style data-emotion="css 149v5c4">
+                                        .css-149v5c4 {
+                                            display: -webkit-box;
+                                            display: -webkit-flex;
+                                            display: -ms-flexbox;
+                                            display: flex;
+                                            -webkit-align-items: center;
+                                            -webkit-box-align: center;
+                                            -ms-flex-align: center;
+                                            align-items: center;
+                                            -webkit-flex-direction: row;
+                                            -ms-flex-direction: row;
+                                            flex-direction: row;
+                                        }
+                                        .css-149v5c4 > *:not(style) ~ *:not(style) {
+                                            -webkit-margin-start: 0.5rem;
+                                            margin-inline-start: 0.5rem;
+                                            margin-top: 0;
+                                        }
+                                    </style>
+                                    <div class="chakra-stack css-149v5c4">
+                                        <style data-emotion="css 1xw4jny">
+                                            .css-1xw4jny {
+                                                -webkit-transition: all 0.15s ease-out;
+                                                transition: all 0.15s ease-out;
+                                                cursor: pointer;
+                                                -webkit-text-decoration: none;
+                                                text-decoration: none;
+                                                outline: none;
+                                                color: inherit;
+                                            }
+                                            .css-1xw4jny:hover,
+                                            .css-1xw4jny[data-hover] {
+                                                -webkit-text-decoration: underline;
+                                                text-decoration: underline;
+                                            }
+                                            .css-1xw4jny:focus,
+                                            .css-1xw4jny[data-focus] {
+                                                box-shadow: none;
+                                            }
+                                        </style>
+                                        <a target="_blank" rel="noopener noreferrer" class="chakra-link css-1xw4jny" href="https://www.linkedin.com/in/shraddha-shekhar/">
+                                            <style data-emotion="css 1thw1oh">
+                                                .css-1thw1oh {
+                                                    display: -webkit-inline-box;
+                                                    display: -webkit-inline-flex;
+                                                    display: -ms-inline-flexbox;
+                                                    display: inline-flex;
+                                                    -webkit-appearance: none;
+                                                    -moz-appearance: none;
+                                                    -ms-appearance: none;
+                                                    appearance: none;
+                                                    -webkit-align-items: center;
+                                                    -webkit-box-align: center;
+                                                    -ms-flex-align: center;
+                                                    align-items: center;
+                                                    -webkit-box-pack: center;
+                                                    -ms-flex-pack: center;
+                                                    -webkit-justify-content: center;
+                                                    justify-content: center;
+                                                    -webkit-transition: all 250ms;
+                                                    transition: all 250ms;
+                                                    -webkit-user-select: none;
+                                                    -moz-user-select: none;
+                                                    -ms-user-select: none;
+                                                    user-select: none;
+                                                    position: relative;
+                                                    white-space: nowrap;
+                                                    vertical-align: middle;
+                                                    outline: none;
+                                                    width: auto;
+                                                    line-height: 1.2;
+                                                    border-radius: 9999px;
+                                                    font-weight: 600;
+                                                    height: 2.5rem;
+                                                    min-width: 2.5rem;
+                                                    font-size: 1rem;
+                                                    padding-left: 1rem;
+                                                    padding-right: 1rem;
+                                                    background: rgba(255, 255, 255, 0.08);
+                                                    padding: 0;
+                                                    background-color: #2d3748;
+                                                    color: #ffffff;
+                                                }
+                                                .css-1thw1oh:focus,
+                                                .css-1thw1oh[data-focus] {
+                                                    box-shadow: none;
+                                                }
+                                                .css-1thw1oh[disabled],
+                                                .css-1thw1oh[disabled]:focus,
+                                                .css-1thw1oh[disabled]:hover,
+                                                .css-1thw1oh[aria-disabled="true"],
+                                                .css-1thw1oh[aria-disabled="true"]:focus,
+                                                .css-1thw1oh[aria-disabled="true"]:hover,
+                                                .css-1thw1oh[data-disabled],
+                                                .css-1thw1oh[data-disabled]:focus,
+                                                .css-1thw1oh[data-disabled]:hover {
+                                                    opacity: 0.4;
+                                                    cursor: not-allowed;
+                                                    box-shadow: none;
+                                                }
+                                                .css-1thw1oh:hover,
+                                                .css-1thw1oh[data-hover] {
+                                                    background-color: #0e76a8;
+                                                    transition-duration: 0.4s;
+                                                }
+                                                .css-1thw1oh:active,
+                                                .css-1thw1oh[data-active] {
+                                                    background: rgba(255, 255, 255, 0.24);
+                                                }
+                                            </style>
+                                            <button type="button" class="chakra-button css-1thw1oh">
+                                                <svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 448 512" aria-hidden="true" focusable="false" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg">
+                                                    <path
+                                                        d="M100.28 448H7.4V148.9h92.88zM53.79 108.1C24.09 108.1 0 83.5 0 53.8a53.79 53.79 0 0 1 107.58 0c0 29.7-24.1 54.3-53.79 54.3zM447.9 448h-92.68V302.4c0-34.7-.7-79.2-48.29-79.2-48.29 0-55.69 37.7-55.69 76.7V448h-92.78V148.9h89.08v40.8h1.3c12.4-23.5 42.69-48.3 87.88-48.3 94 0 111.28 61.9 111.28 142.3V448z"
+                                                    ></path>
+                                                </svg>
+                                            </button>
+                                        </a>
+                                        <a target="_blank" rel="noopener noreferrer" class="chakra-link css-1xw4jny" href="https://github.com/27shraddhaS">
+                                            <style data-emotion="css k49zfd">
+                                                .css-k49zfd {
+                                                    display: -webkit-inline-box;
+                                                    display: -webkit-inline-flex;
+                                                    display: -ms-inline-flexbox;
+                                                    display: inline-flex;
+                                                    -webkit-appearance: none;
+                                                    -moz-appearance: none;
+                                                    -ms-appearance: none;
+                                                    appearance: none;
+                                                    -webkit-align-items: center;
+                                                    -webkit-box-align: center;
+                                                    -ms-flex-align: center;
+                                                    align-items: center;
+                                                    -webkit-box-pack: center;
+                                                    -ms-flex-pack: center;
+                                                    -webkit-justify-content: center;
+                                                    justify-content: center;
+                                                    -webkit-transition: all 250ms;
+                                                    transition: all 250ms;
+                                                    -webkit-user-select: none;
+                                                    -moz-user-select: none;
+                                                    -ms-user-select: none;
+                                                    user-select: none;
+                                                    position: relative;
+                                                    white-space: nowrap;
+                                                    vertical-align: middle;
+                                                    outline: none;
+                                                    width: auto;
+                                                    line-height: 1.2;
+                                                    border-radius: 9999px;
+                                                    font-weight: 600;
+                                                    height: 2.5rem;
+                                                    min-width: 2.5rem;
+                                                    font-size: 1rem;
+                                                    padding-left: 1rem;
+                                                    padding-right: 1rem;
+                                                    background: rgba(255, 255, 255, 0.08);
+                                                    padding: 0;
+                                                    background-color: #2d3748;
+                                                    color: #ffffff;
+                                                }
+                                                .css-k49zfd:focus,
+                                                .css-k49zfd[data-focus] {
+                                                    box-shadow: none;
+                                                }
+                                                .css-k49zfd[disabled],
+                                                .css-k49zfd[disabled]:focus,
+                                                .css-k49zfd[disabled]:hover,
+                                                .css-k49zfd[aria-disabled="true"],
+                                                .css-k49zfd[aria-disabled="true"]:focus,
+                                                .css-k49zfd[aria-disabled="true"]:hover,
+                                                .css-k49zfd[data-disabled],
+                                                .css-k49zfd[data-disabled]:focus,
+                                                .css-k49zfd[data-disabled]:hover {
+                                                    opacity: 0.4;
+                                                    cursor: not-allowed;
+                                                    box-shadow: none;
+                                                }
+                                                .css-k49zfd:hover,
+                                                .css-k49zfd[data-hover] {
+                                                    background-color: #000000;
+                                                    transition-duration: 0.4s;
+                                                }
+                                                .css-k49zfd:active,
+                                                .css-k49zfd[data-active] {
+                                                    background: rgba(255, 255, 255, 0.24);
+                                                }
+                                            </style>
+                                            <button type="button" class="chakra-button css-k49zfd">
+                                                <svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 496 512" aria-hidden="true" focusable="false" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg">
+                                                    <path
+                                                        d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3zm44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z"
+                                                    ></path>
+                                                </svg>
+                                            </button>
+                                        </a>
+                                        <a target="_blank" rel="noopener noreferrer" class="chakra-link css-1xw4jny" href="https://shraddhashekhar.medium.com/">
+                                            <button type="button" class="chakra-button css-k49zfd">
+                                                <style data-emotion="css 15p9n5u">
+                                                    .css-15p9n5u {
+                                                        height: 24px;
+                                                    }
+                                                </style>
+                                                <img src="/static/medium.png" alt="medium" class="chakra-image__placeholder css-15p9n5u" aria-hidden="true" focusable="false" />
+                                            </button>
+                                        </a>
+                                    </div>
+                                </li>
+                                <li class="chakra-wrap__listitem css-10dnwi6">
+                                    <style data-emotion="css 1nobk4z">
+                                        .css-1nobk4z {
+                                            display: -webkit-inline-box;
+                                            display: -webkit-inline-flex;
+                                            display: -ms-inline-flexbox;
+                                            display: inline-flex;
+                                            -webkit-appearance: none;
+                                            -moz-appearance: none;
+                                            -ms-appearance: none;
+                                            appearance: none;
+                                            -webkit-align-items: center;
+                                            -webkit-box-align: center;
+                                            -ms-flex-align: center;
+                                            align-items: center;
+                                            -webkit-box-pack: center;
+                                            -ms-flex-pack: center;
+                                            -webkit-justify-content: center;
+                                            justify-content: center;
+                                            -webkit-transition: all 250ms;
+                                            transition: all 250ms;
+                                            -webkit-user-select: none;
+                                            -moz-user-select: none;
+                                            -ms-user-select: none;
+                                            user-select: none;
+                                            position: relative;
+                                            white-space: nowrap;
+                                            vertical-align: middle;
+                                            outline: none;
+                                            width: auto;
+                                            line-height: 1.2;
+                                            border-radius: 0.375rem;
+                                            font-weight: 400;
+                                            height: 2rem;
+                                            min-width: 2rem;
+                                            font-size: 0.875rem;
+                                            padding-left: 0.75rem;
+                                            padding-right: 0.75rem;
+                                            border: 1px solid;
+                                            border-color: #4a5568;
+                                            color: #718096;
+                                        }
+                                        .css-1nobk4z:focus,
+                                        .css-1nobk4z[data-focus] {
+                                            box-shadow: none;
+                                        }
+                                        .css-1nobk4z[disabled],
+                                        .css-1nobk4z[disabled]:focus,
+                                        .css-1nobk4z[disabled]:hover,
+                                        .css-1nobk4z[aria-disabled="true"],
+                                        .css-1nobk4z[aria-disabled="true"]:focus,
+                                        .css-1nobk4z[aria-disabled="true"]:hover,
+                                        .css-1nobk4z[data-disabled],
+                                        .css-1nobk4z[data-disabled]:focus,
+                                        .css-1nobk4z[data-disabled]:hover {
+                                            opacity: 0.4;
+                                            cursor: not-allowed;
+                                            box-shadow: none;
+                                        }
+                                        .css-1nobk4z:hover,
+                                        .css-1nobk4z[data-hover] {
+                                            background-color: #2d3748;
+                                            color: #a0aec0;
+                                            transition-duration: 0.4s;
+                                            -webkit-text-decoration: none;
+                                            text-decoration: none;
+                                        }
+                                        .css-1nobk4z:active,
+                                        .css-1nobk4z[data-active] {
+                                            background: rgba(255, 255, 255, 0.16);
+                                        }
+                                    </style>
+                                    <a class="chakra-button css-1nobk4z" href="/resume/Shraddha_Shekhar_Resume.pdf">Resume</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="css-0">
+                        <style data-emotion="css 1hxiveg">
+                            .css-1hxiveg {
+                                font-family: Roboto Condensed, system-ui, sans-serif;
+                                font-weight: 700;
+                                font-size: 1.5rem;
+                                line-height: 1.33;
+                                margin-top: 2rem;
+                                margin-bottom: 1rem;
+                            }
+                            @media screen and (min-width: 900px) {
+                                .css-1hxiveg {
+                                    line-height: 1.2;
+                                }
+                            }
+                        </style>
+                        <h2 class="chakra-heading css-1hxiveg" id="section2">About Me</h2>
+                        <div class="css-0">
+                            <style data-emotion="css aean9g">
+                                .css-aean9g {
+                                    color: #cbd5e0;
+                                    margin-bottom: 0.5rem;
+                                }
+                            </style>
+                            <p class="chakra-text css-aean9g">
+                                <style data-emotion="css 1e9h9qn">
+                                    .css-1e9h9qn {
+                                        color: #cbd5e0;
+                                    }
+                                </style>
+                                <span class="chakra-text css-1e9h9qn">I am a Computer Science master&#x27;s student at the University at Buffalo with background in Software Engineering and Machine Learning. I am super intrigued by Natural Language Processing and Deep Learning.
+                                I have one year industry experience @Persistent Systems. I am a quick learner and enjoy exploring new domains to innovate solutions.</span>
+                            </p>
+                            <p class="chakra-text css-aean9g"><span class="chakra-text css-1e9h9qn"><b>Actively looking for full-time opportunities starting Jan 2024 in Software Development (SDE), Data Science and Machine Learning.</b></span></p>
+                            <p class="chakra-text css-aean9g"><span class="chakra-text css-1e9h9qn">#SoftwareDeveloper #SDE #DataScientist #MachineLearningEngineer #FullStackDeveloper #NLP</span></p>
+                        </div>
+                    </div>
+                    <style data-emotion="css 142y7a6">
+                        .css-142y7a6 {
+                            margin-top: 2rem;
+                            margin-bottom: 2rem;
+                            width: 100%;
+                        }
+                    </style>
+                    <div class="css-142y7a6">
+                        <h2 class="chakra-heading css-1hxiveg">Timeline</h2>
+
+                        <style data-emotion="css k008qs">
+                            .css-k008qs {
+                                display: -webkit-box;
+                                display: -webkit-flex;
+                                display: -ms-flexbox;
+                                display: flex;
+
+                            }
+                        </style>
+                        <div class="css-k008qs">
+                            <style data-emotion="css 9wt4f1">
+                                .css-9wt4f1 {
+                                    color: #a0aec0;
+                                    width: 50px;
+                                    margin-top: 0.5rem;
+                                    padding-top: 1rem;
+                                    border-top-left-radius: 0.5rem;
+
+                                }
+                            </style>
+                            <p class="chakra-text css-9wt4f1">2023 Jan</p>
+                            <style data-emotion="css 197nd2o">
+                                .css-197nd2o {
+                                    display: -webkit-box;
+                                    display: -webkit-flex;
+                                    display: -ms-flexbox;
+                                    display: flex;
+                                    border-left-color: #edf2f7;
+                                    border-left-width: 2px;
+                                    width: 100%;
+                                    padding-top: 1rem;
+                                    border-top-right-radius: 0.5rem;
+                                }
+                            </style>
+                            <div class="css-197nd2o">
+                                <style data-emotion="css 5bjx0a">
+                                    .css-5bjx0a {
+                                        width: 10px;
+                                        height: 10px;
+                                        background-color: #edf2f7;
+                                        margin-left: -6px;
+                                        margin-top: 15px;
+                                        border-radius: 5px;
+                                    }
+                                </style>
+                                <div class="css-5bjx0a"></div>
+                                <style data-emotion="css 1xfr2mj">
+                                    .css-1xfr2mj {
+                                        display: -webkit-box;
+                                        display: -webkit-flex;
+                                        display: -ms-flexbox;
+                                        display: flex;
+                                        -webkit-flex-direction: column;
+                                        -ms-flex-direction: column;
+                                        flex-direction: column;
+                                    }
+                                    @media screen and (min-width: 600px) {
+                                        .css-1xfr2mj {
+                                            -webkit-flex-direction: row;
+                                            -ms-flex-direction: row;
+                                            flex-direction: row;
+                                        }
+                                    }
+                                </style>
+                                <div class="css-1xfr2mj">
+                                    <style data-emotion="css 1qo4u0g">
+                                        .css-1qo4u0g {
+                                            width: 50px;
+                                            padding: 0.5rem;
+                                            margin-left: 0.5rem;
+                                        }
+                                    </style>
+                                    <div align="center" class="css-1qo4u0g">
+                                        <style data-emotion="css 1f5ave3">
+                                            .css-1f5ave3 {
+                                                max-width: 50px;
+                                                max-height: 50px;
+<!--                                                margin-top: 1rem;-->
+                                                border-radius: 0.375rem;
+                                            }
+                                        </style>
+<!--                                        <p class="chakra-text css-9wt4f1">2023 Jan</p>-->
+<!--                                        <img class="chakra-image__placeholder css-1f5ave3" />-->
+                                    </div>
+                                    <style data-emotion="css qs4ifh">
+                                        .css-qs4ifh {
+                                            margin: 0.5rem;
+                                            width: 100%;
+                                        }
+                                    </style>
+                                    <div class="css-qs4ifh">
+                                        <style data-emotion="css 1u8zspk">
+                                            .css-1u8zspk {
+                                                color: #cbd5e0;
+                                                font-size: 1.25rem;
+                                            }
+                                        </style>
+                                        <p class="chakra-text css-1u8zspk"><b>Graduate Teaching Assistant</b></p>
+                                        <style data-emotion="css 1fb0br2">
+                                            .css-1fb0br2 {
+                                                color: #a0aec0;
+                                            }
+                                        </style>
+                                        <p class="chakra-text css-1fb0br2">University at Buffalo</p>
+                                        <div class="css-0">
+                                            <p class="chakra-text css-aean9g"><span class="chakra-text css-1e9h9qn">Educating students and evaluating assignments/projects.<br>CSE 4/546: Reinforcement Learning (Spring 2023)<br>CSE 4/574: Machine Learning (Summer 2023, Fall 2023)</span></p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="css-k008qs">
+                            <style data-emotion="css 1yxrjky">
+                                .css-1yxrjky {
+                                    color: #a0aec0;
+                                    width: 50px;
+                                    margin-top: 0.5rem;
+                                }
+                            </style>
+<!--                            <p class="chakra-text css-1yxrjky">2021 May</p>-->
+                            <style data-emotion="css m190yg">
+                                .css-m190yg {
+                                    display: -webkit-box;
+                                    display: -webkit-flex;
+                                    display: -ms-flexbox;
+                                    display: flex;
+                                    border-left-color: #edf2f7;
+                                    border-left-width: 2px;
+                                    width: 100%;
+                                }
+                            </style>
+                        </div>
+                        <div class="css-k008qs">
+                            <p class="chakra-text css-1yxrjky">2022 Aug</p>
+                            <div class="css-m190yg">
+                                <div class="css-5bjx0a"></div>
+                                <div class="css-1xfr2mj">
+                                    <div align="center" class="css-1qo4u0g"><img class="chakra-image__placeholder css-1f5ave3" /></div>
+                                    <div class="css-qs4ifh">
+                                        <p class="chakra-text css-1u8zspk"><b>Master's in Computer Science and Engineering</b></p>
+                                        <p class="chakra-text css-1fb0br2">University at Buffalo</p>
+                                        <p class="chakra-text css-1fb0br2"><b>GPA: 3.91/4</b></p>
+                                        <div class="css-0">
+                                            <p class="chakra-text css-aean9g">
+
+                                                <span class="chakra-text css-1e9h9qn">Specializations: ML, NLP, Reinforcement Learning, Information Retrieval, Distributed Systems, PyTorch, TensorFlow</span>
+                                            </p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="css-k008qs">
+                            <p class="chakra-text css-1yxrjky">2021 May</p>
+                            <div class="css-m190yg">
+                                <div class="css-5bjx0a"></div>
+                                <div class="css-1xfr2mj">
+                                    <div align="center" class="css-1qo4u0g"><img class="chakra-image__placeholder css-1f5ave3" /></div>
+                                    <div class="css-qs4ifh">
+                                        <p class="chakra-text css-1u8zspk"><b>Software Development Engineer</b></p>
+                                        <p class="chakra-text css-1fb0br2">Persistent Systems</p>
+                                        <div class="css-0">
+                                            <p class="chakra-text css-aean9g">
+                                                <span class="chakra-text css-1e9h9qn">Collaborated on a government project for website traffic analysis and designed a simulated environment, mitigating threats by 20%. </span><br />
+                                                <span class="chakra-text css-1e9h9qn">Technologies: Python, Dask, Elasticsearch, Linux, Wazuh, Java</span>
+                                            </p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="css-k008qs">
+                            <p class="chakra-text css-1yxrjky">2020 Dec</p>
+                            <div class="css-m190yg">
+                                <div class="css-5bjx0a"></div>
+                                <div class="css-1xfr2mj">
+                                    <div align="center" class="css-1qo4u0g"><img class="chakra-image__placeholder css-1f5ave3" /></div>
+                                    <div class="css-qs4ifh">
+                                        <p class="chakra-text css-1u8zspk"><b>Data Science and Python Intern</b></p>
+                                        <p class="chakra-text css-1fb0br2">Verzeo</p>
+                                        <div class="css-0">
+                                            <p class="chakra-text css-aean9g">
+                                                <span class="chakra-text css-1e9h9qn">Data Preprocessing, Feature engineering and visualizing the analyzed insight after training models.<br />
+                                                <span class="chakra-text css-1e9h9qn">Technologies used: Dash, Sklearn, pandas, matplotlib, seaborn</span>
+                                            </p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="css-k008qs">
+                            <p class="chakra-text css-1yxrjky">2020 March</p>
+                            <div class="css-m190yg">
+                                <div class="css-5bjx0a"></div>
+                                <div class="css-1xfr2mj">
+                                    <div align="center" class="css-1qo4u0g"><img class="chakra-image__placeholder css-1f5ave3" /></div>
+                                    <div class="css-qs4ifh">
+                                        <p class="chakra-text css-1u8zspk"><b>Web Development Intern</b></p>
+                                        <p class="chakra-text css-1fb0br2">The Digital Tantra</p>
+                                        <div class="css-0">
+                                            <p class="chakra-text css-aean9g"><span class="chakra-text css-1e9h9qn">Designed and developed a brand-new website for the company.</span></p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="css-k008qs">
+                            <style data-emotion="css n67hkv">
+                                .css-n67hkv {
+                                    color: #a0aec0;
+                                    width: 50px;
+                                    margin-top: 0.5rem;
+                                    padding-bottom: 1rem;
+                                    border-bottom-right-radius: 0.5rem;
+                                }
+                            </style>
+                            <p class="chakra-text css-n67hkv">2017</p>
+                            <style data-emotion="css uoy4lb">
+                                .css-uoy4lb {
+                                    display: -webkit-box;
+                                    display: -webkit-flex;
+                                    display: -ms-flexbox;
+                                    display: flex;
+                                    border-left-color: #edf2f7;
+                                    border-left-width: 2px;
+                                    width: 100%;
+                                    padding-bottom: 1rem;
+                                    border-bottom-right-radius: 0.5rem;
+                                }
+                            </style>
+                            <div class="css-uoy4lb">
+                                <div class="css-5bjx0a"></div>
+                                <div class="css-1xfr2mj">
+                                    <div align="center" class="css-1qo4u0g"><img class="chakra-image__placeholder css-1f5ave3" /></div>
+                                    <div class="css-qs4ifh" id="section3">
+                                        <p class="chakra-text css-1u8zspk"><b>Bachelor&#x27;s in Computer Engineering</b></p>
+                                        <p class="chakra-text css-1fb0br2">Savitribai Phule Pune University</p>
+                                        <p class="chakra-text css-1fb0br2"><b>GPA: 9.32/10 (3.95/4 WES)</b></p>
+                                        <div class="css-0">
+                                            <p class="chakra-text css-aean9g"><span class="chakra-text css-1e9h9qn">Beginning of an exciting journey in programming.</span></p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="css-0">
+                        <h2 class="chakra-heading css-1hxiveg">Projects</h2>
+                        <div class="chakra-wrap css-0">
+                            <ul class="chakra-wrap__list css-cg2r9d">
+                                <li class="chakra-wrap__listitem css-ziz9pt">
+                                    <div class="css-0">
+                                        <style data-emotion="css besd1p">
+                                            .css-besd1p {
+                                                font-family: Roboto Condensed, system-ui, sans-serif;
+                                                font-weight: 700;
+                                                font-size: 1rem;
+                                                line-height: 1.33;
+                                                color: #a0aec0;
+                                                margin-bottom: 1rem;
+                                            }
+                                            @media screen and (min-width: 900px) {
+                                                .css-besd1p {
+                                                    line-height: 1.2;
+                                                }
+                                            }
+                                        </style>
+                                        <h2 class="chakra-heading css-besd1p">Deep Learning</h2>
+                                        <div class="chakra-wrap css-0">
+                                            <ul class="chakra-wrap__list css-cg2r9d">
+                                                <li class="chakra-wrap__listitem css-ziz9pt">
+                                                    <style data-emotion="css 1hskriy">
+                                                        .css-1hskriy {
+                                                            width: 250px;
+                                                        }
+                                                    </style>
+                                                    <div class="css-1hskriy">
+                                                        <a class="chakra-link css-1xw4jny" href="https://github.com/27shraddhaS"
+                                                        <a class="chakra-link css-1xw4jny">
+                                                            <style data-emotion="css 1egd7hl">
+                                                                .css-1egd7hl {
+                                                                    width: 100%;
+                                                                    height: 150px;
+                                                                    border-radius: 0.375rem;
+                                                                }
+                                                            </style>
+                                                            <img src="/static/bot.jpg" alt="Empathetic Chatbot" class="chakra-image__placeholder css-1egd7hl" />
+                                                            <style data-emotion="css 1yndyyu">
+                                                                .css-1yndyyu {
+                                                                    font-family: Roboto Condensed, system-ui, sans-serif;
+                                                                    font-weight: 700;
+                                                                    font-size: 1.125rem;
+                                                                    line-height: 1.33;
+                                                                    margin-top: 0.5rem;
+                                                                    margin-bottom: 0.5rem;
+                                                                }
+                                                                @media screen and (min-width: 900px) {
+                                                                    .css-1yndyyu {
+                                                                        line-height: 1.2;
+                                                                    }
+                                                                }
+                                                            </style>
+                                                            <h2 class="chakra-heading css-1yndyyu">Empathetic Chatbot</h2>
+                                                        </a>
+                                                        <style data-emotion="css j87mmk">
+                                                            .css-j87mmk {
+                                                                color: #cbd5e0;
+                                                                overflow: hidden;
+                                                                text-overflow: ellipsis;
+                                                                -webkit-display: -webkit-box;
+                                                                display: -webkit-box;
+                                                                -webkit-box-orient: vertical;
+                                                                -webkit-line-clamp: 5;
+                                                            }
+                                                        </style>
+                                                        <p class="chakra-text css-j87mmk">A chatbot capable of generating both topic-specific and general responses while also demonstrating empathy.</p>
+                                                        <ul role="list" class="css-px8c62">
+                                                            <li class="css-0">GPT2, RoBerta</li>
+                                                        </ul>
+                                                        <div class="chakra-stack css-rqf9m3">
+                                                            <a class="chakra-link css-1xw4jny" href="https://github.com/27shraddhaS">
+                                                                <svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 16 16" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg">
+                                                                    <path
+                                                                        fill-rule="evenodd"
+                                                                        d="M5.854 4.146a.5.5 0 010 .708L2.707 8l3.147 3.146a.5.5 0 01-.708.708l-3.5-3.5a.5.5 0 010-.708l3.5-3.5a.5.5 0 01.708 0zm4.292 0a.5.5 0 000 .708L13.293 8l-3.147 3.146a.5.5 0 00.708.708l3.5-3.5a.5.5 0 000-.708l-3.5-3.5a.5.5 0 00-.708 0z"
+                                                                        clip-rule="evenodd"
+                                                                    ></path>
+                                                                </svg>
+                                                            </a>
+                                                        </div>
+                                                    </div>
+                                                </li>
+                                                <li class="chakra-wrap__listitem css-ziz9pt">
+                                                    <div class="css-1hskriy">
+                                                        <a class="chakra-link css-1xw4jny" href="https://github.com/27shraddhaS">
+                                                            <img src="/static/multi.jpg" alt="Reinforcement Learning" class="chakra-image__placeholder css-1egd7hl" />
+                                                            <h2 class="chakra-heading css-1yndyyu">Reinforcement Learning</h2>
+                                                        </a>
+                                                        <style data-emotion="css px8c62">
+                                                            .css-px8c62 {
+                                                                list-style-type: initial;
+                                                                margin-left: 1em;
+                                                            }
+                                                        </style>
+                                                        <p class="chakra-text css-j87mmk">Solved multi-agent environment.</p>
+                                                        <ul role="list" class="css-px8c62">
+                                                            <li class="css-0">Deep Q Learning</li>
+                                                            <li class="css-0">Actor Critic</li>
+                                                            <li class="css-0">Q-Learning, SARSA</li>
+                                                        </ul>
+                                                        <div class="chakra-stack css-rqf9m3">
+                                                            <a class="chakra-link css-1xw4jny" href="https://github.com/27shraddhaS">
+                                                                <svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 16 16" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg">
+                                                                    <path
+                                                                        fill-rule="evenodd"
+                                                                        d="M5.854 4.146a.5.5 0 010 .708L2.707 8l3.147 3.146a.5.5 0 01-.708.708l-3.5-3.5a.5.5 0 010-.708l3.5-3.5a.5.5 0 01.708 0zm4.292 0a.5.5 0 000 .708L13.293 8l-3.147 3.146a.5.5 0 00.708.708l3.5-3.5a.5.5 0 000-.708l-3.5-3.5a.5.5 0 00-.708 0z"
+                                                                        clip-rule="evenodd"
+                                                                    ></path>
+                                                                </svg>
+                                                            </a>
+                                                        </div>
+                                                    </div>
+                                                </li>
+
+                                                <li class="chakra-wrap__listitem css-ziz9pt">
+
+                                                    <div class="css-1hskriy">
+                                                        <a class="chakra-link css-1xw4jny" href="https://github.com/27shraddhaS">
+                                                            <img src="/static/viz.png" alt="Vizualize" class="chakra-image__placeholder css-1egd7hl" />
+                                                            <h2 class="chakra-heading css-1yndyyu">Visualizing RL algorithms</h2>
+                                                        </a>
+                                                        <p>Interactive & Responsive Web Application to facilitate students in understanding working of complex algorithms.</p>
+                                                        <div class="chakra-stack css-rqf9m3">
+                                                            <a class="chakra-link css-1xw4jny" href="https://github.com/27shraddhaS">
+                                                                <svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 16 16" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg">
+                                                                    <path
+                                                                        fill-rule="evenodd"
+                                                                        d="M5.854 4.146a.5.5 0 010 .708L2.707 8l3.147 3.146a.5.5 0 01-.708.708l-3.5-3.5a.5.5 0 010-.708l3.5-3.5a.5.5 0 01.708 0zm4.292 0a.5.5 0 000 .708L13.293 8l-3.147 3.146a.5.5 0 00.708.708l3.5-3.5a.5.5 0 000-.708l-3.5-3.5a.5.5 0 00-.708 0z"
+                                                                        clip-rule="evenodd"
+                                                                    ></path>
+                                                                </svg>
+                                                            </a>
+                                                        </div>
+                                                    </div>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </li>
+                                <li class="chakra-wrap__listitem css-ziz9pt">
+                                    <div class="css-0">
+                                        <h2 class="chakra-heading css-besd1p">Distributed Systems</h2>
+                                        <div class="chakra-wrap css-0">
+                                            <ul class="chakra-wrap__list css-cg2r9d">
+                                                <li class="chakra-wrap__listitem css-ziz9pt">
+                                                    <div class="css-1hskriy">
+                                                        <a class="chakra-link css-1xw4jny" href="https://github.com/27shraddhaS">
+                                                            <img src="/static/raft.jpg" alt="Raft" class="chakra-image__placeholder css-1egd7hl" style="margin-left:30px; width: 150px; height: 150px;"/>
+                                                            <h2 class="chakra-heading css-1yndyyu">Distributed Key-Value Storage</h2>
+                                                        </a>
+                                                        <p class="chakra-text css-j87mmk">
+                                                            Developing fault-tolerant distributed key-value storage utilizing Raft Consensus algorithm.
+                                                        </p>
+                                                        <div class="chakra-stack css-rqf9m3">
+                                                            <br>
+                                                            <p class="chakra-text css-besd1p">In Progress..</p>
+                                                            <a class="chakra-link css-1xw4jny" href="https://github.com/27shraddhaS">
+                                                                <svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 16 16" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg">
+                                                                    <path
+                                                                        fill-rule="evenodd"
+                                                                        d="M5.854 4.146a.5.5 0 010 .708L2.707 8l3.147 3.146a.5.5 0 01-.708.708l-3.5-3.5a.5.5 0 010-.708l3.5-3.5a.5.5 0 01.708 0zm4.292 0a.5.5 0 000 .708L13.293 8l-3.147 3.146a.5.5 0 00.708.708l3.5-3.5a.5.5 0 000-.708l-3.5-3.5a.5.5 0 00-.708 0z"
+                                                                        clip-rule="evenodd"
+                                                                    ></path>
+                                                                </svg>
+                                                            </a>
+                                                        </div>
+                                                    </div>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+                        <style data-emotion="css 1rpw7tl">
+                            .css-1rpw7tl {
+                                display: -webkit-inline-box;
+                                display: -webkit-inline-flex;
+                                display: -ms-inline-flexbox;
+                                display: inline-flex;
+                                -webkit-appearance: none;
+                                -moz-appearance: none;
+                                -ms-appearance: none;
+                                appearance: none;
+                                -webkit-align-items: center;
+                                -webkit-box-align: center;
+                                -ms-flex-align: center;
+                                align-items: center;
+                                -webkit-box-pack: center;
+                                -ms-flex-pack: center;
+                                -webkit-justify-content: center;
+                                justify-content: center;
+                                -webkit-transition: all 250ms;
+                                transition: all 250ms;
+                                -webkit-user-select: none;
+                                -moz-user-select: none;
+                                -ms-user-select: none;
+                                user-select: none;
+                                position: relative;
+                                white-space: nowrap;
+                                vertical-align: middle;
+                                outline: none;
+                                width: auto;
+                                line-height: 1.2;
+                                border-radius: 0.375rem;
+                                font-weight: 600;
+                                height: 2rem;
+                                min-width: 2rem;
+                                font-size: 0.875rem;
+                                padding-left: 0.75rem;
+                                padding-right: 0.75rem;
+                                border: 1px solid;
+                                border-color: rgba(255, 255, 255, 0.16);
+                                color: rgba(255, 255, 255, 0.92);
+                                margin-top: 1rem;
+                            }
+                            .css-1rpw7tl:focus,
+                            .css-1rpw7tl[data-focus] {
+                                box-shadow: none;
+                            }
+                            .css-1rpw7tl[disabled],
+                            .css-1rpw7tl[disabled]:focus,
+                            .css-1rpw7tl[disabled]:hover,
+                            .css-1rpw7tl[aria-disabled="true"],
+                            .css-1rpw7tl[aria-disabled="true"]:focus,
+                            .css-1rpw7tl[aria-disabled="true"]:hover,
+                            .css-1rpw7tl[data-disabled],
+                            .css-1rpw7tl[data-disabled]:focus,
+                            .css-1rpw7tl[data-disabled]:hover {
+                                opacity: 0.4;
+                                cursor: not-allowed;
+                                box-shadow: none;
+                            }
+                            .css-1rpw7tl:hover,
+                            .css-1rpw7tl[data-hover] {
+                                background: rgba(255, 255, 255, 0.08);
+                            }
+                            .css-1rpw7tl:hover[disabled],
+                            .css-1rpw7tl[data-hover][disabled],
+                            .css-1rpw7tl:hover[disabled]:focus,
+                            .css-1rpw7tl[data-hover][disabled]:focus,
+                            .css-1rpw7tl:hover[disabled]:hover,
+                            .css-1rpw7tl[data-hover][disabled]:hover,
+                            .css-1rpw7tl:hover[aria-disabled="true"],
+                            .css-1rpw7tl[data-hover][aria-disabled="true"],
+                            .css-1rpw7tl:hover[aria-disabled="true"]:focus,
+                            .css-1rpw7tl[data-hover][aria-disabled="true"]:focus,
+                            .css-1rpw7tl:hover[aria-disabled="true"]:hover,
+                            .css-1rpw7tl[data-hover][aria-disabled="true"]:hover,
+                            .css-1rpw7tl:hover[data-disabled],
+                            .css-1rpw7tl[data-hover][data-disabled],
+                            .css-1rpw7tl:hover[data-disabled]:focus,
+                            .css-1rpw7tl[data-hover][data-disabled]:focus,
+                            .css-1rpw7tl:hover[data-disabled]:hover,
+                            .css-1rpw7tl[data-hover][data-disabled]:hover {
+                                background: initial;
+                            }
+                            .css-1rpw7tl:active,
+                            .css-1rpw7tl[data-active] {
+                                background: rgba(255, 255, 255, 0.16);
+                            }
+                        </style>
+                        <style data-emotion="css 1hji60x">
+                            .css-1hji60x {
+                                -webkit-transition: all 0.15s ease-out;
+                                transition: all 0.15s ease-out;
+                                cursor: pointer;
+                                -webkit-text-decoration: none;
+                                text-decoration: none;
+                                outline: none;
+                                color: inherit;
+                                display: -webkit-inline-box;
+                                display: -webkit-inline-flex;
+                                display: -ms-inline-flexbox;
+                                display: inline-flex;
+                                -webkit-appearance: none;
+                                -moz-appearance: none;
+                                -ms-appearance: none;
+                                appearance: none;
+                                -webkit-align-items: center;
+                                -webkit-box-align: center;
+                                -ms-flex-align: center;
+                                align-items: center;
+                                -webkit-box-pack: center;
+                                -ms-flex-pack: center;
+                                -webkit-justify-content: center;
+                                justify-content: center;
+                                -webkit-transition: all 250ms;
+                                transition: all 250ms;
+                                -webkit-user-select: none;
+                                -moz-user-select: none;
+                                -ms-user-select: none;
+                                user-select: none;
+                                position: relative;
+                                white-space: nowrap;
+                                vertical-align: middle;
+                                outline: none;
+                                width: auto;
+                                line-height: 1.2;
+                                border-radius: 0.375rem;
+                                font-weight: 600;
+                                height: 2rem;
+                                min-width: 2rem;
+                                font-size: 0.875rem;
+                                padding-left: 0.75rem;
+                                padding-right: 0.75rem;
+                                border: 1px solid;
+                                border-color: rgba(255, 255, 255, 0.16);
+                                color: rgba(255, 255, 255, 0.92);
+                                margin-top: 1rem;
+                            }
+                            .css-1hji60x:hover,
+                            .css-1hji60x[data-hover] {
+                                -webkit-text-decoration: underline;
+                                text-decoration: underline;
+                            }
+                            .css-1hji60x:focus,
+                            .css-1hji60x[data-focus] {
+                                box-shadow: none;
+                            }
+                            .css-1hji60x:focus,
+                            .css-1hji60x[data-focus] {
+                                box-shadow: none;
+                            }
+                            .css-1hji60x[disabled],
+                            .css-1hji60x[disabled]:focus,
+                            .css-1hji60x[disabled]:hover,
+                            .css-1hji60x[aria-disabled="true"],
+                            .css-1hji60x[aria-disabled="true"]:focus,
+                            .css-1hji60x[aria-disabled="true"]:hover,
+                            .css-1hji60x[data-disabled],
+                            .css-1hji60x[data-disabled]:focus,
+                            .css-1hji60x[data-disabled]:hover {
+                                opacity: 0.4;
+                                cursor: not-allowed;
+                                box-shadow: none;
+                            }
+                            .css-1hji60x:hover,
+                            .css-1hji60x[data-hover] {
+                                background: rgba(255, 255, 255, 0.08);
+                            }
+                            .css-1hji60x:hover[disabled],
+                            .css-1hji60x[data-hover][disabled],
+                            .css-1hji60x:hover[disabled]:focus,
+                            .css-1hji60x[data-hover][disabled]:focus,
+                            .css-1hji60x:hover[disabled]:hover,
+                            .css-1hji60x[data-hover][disabled]:hover,
+                            .css-1hji60x:hover[aria-disabled="true"],
+                            .css-1hji60x[data-hover][aria-disabled="true"],
+                            .css-1hji60x:hover[aria-disabled="true"]:focus,
+                            .css-1hji60x[data-hover][aria-disabled="true"]:focus,
+                            .css-1hji60x:hover[aria-disabled="true"]:hover,
+                            .css-1hji60x[data-hover][aria-disabled="true"]:hover,
+                            .css-1hji60x:hover[data-disabled],
+                            .css-1hji60x[data-hover][data-disabled],
+                            .css-1hji60x:hover[data-disabled]:focus,
+                            .css-1hji60x[data-hover][data-disabled]:focus,
+                            .css-1hji60x:hover[data-disabled]:hover,
+                            .css-1hji60x[data-hover][data-disabled]:hover {
+                                background: initial;
+                            }
+                            .css-1hji60x:active,
+                            .css-1hji60x[data-active] {
+                                background: rgba(255, 255, 255, 0.16);
+                            }
+                        </style>
+                        <a class="chakra-link chakra-button css-1hji60x" href="https://github.com/27shraddhaS">More projects</a>
+                    </div>
+
+                    <div class="css-0" id="section5">
+                        <h2 class="chakra-heading css-1hxiveg">Blogs</h2>
+                        <a class="chakra-link css-1xtrm0z" href="https://shraddhashekhar.medium.com/" style="display: flex; align-items: center;>
+                            <p class="chakra-text css-1e9h9qn">My Blogs on Medium and Analytics Vidhya</p>
+                            <img src="/static/medium.png" alt="Medium" class="chakra-image__placeholder css-15p9n5u" style="width: 35px; height: 25px; margin-right: 5px;"/>
+                            <img src="/static/av.png" alt="AV" class="chakra-image__placeholder css-15p9n5u" style="width: 20px; height: 20px;"/>
+                        </a><br>
+                        <div class="chakra-wrap css-0">
+                            <style data-emotion="css cg2r9d">
+                                .css-cg2r9d {
+                                    display: -webkit-box;
+                                    display: -webkit-flex;
+                                    display: -ms-flexbox;
+                                    display: flex;
+                                    -webkit-box-flex-wrap: wrap;
+                                    -webkit-flex-wrap: wrap;
+                                    -ms-flex-wrap: wrap;
+                                    flex-wrap: wrap;
+                                    list-style-type: none;
+                                    padding: 0;
+                                    margin: calc(1rem / 2 * -1);
+                                }
+                            </style>
+                            <ul class="chakra-wrap__list css-cg2r9d">
+                                <style data-emotion="css ziz9pt">
+                                    .css-ziz9pt {
+                                        display: -webkit-box;
+                                        display: -webkit-flex;
+                                        display: -ms-flexbox;
+                                        display: flex;
+                                        -webkit-align-items: flex-start;
+                                        -webkit-box-align: flex-start;
+                                        -ms-flex-align: flex-start;
+                                        align-items: flex-start;
+                                        margin: calc(1rem / 2);
+                                    }
+                                </style>
+                                <li class="chakra-wrap__listitem css-ziz9pt">
+                                    <style data-emotion="css 16ddsgm">
+                                        .css-16ddsgm {
+                                            display: -webkit-box;
+                                            display: -webkit-flex;
+                                            display: -ms-flexbox;
+                                            display: flex;
+                                            -webkit-flex-direction: row;
+                                            -ms-flex-direction: row;
+                                            flex-direction: row;
+                                            height: 240px;
+                                            box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.06);
+                                            border-radius: 8px;
+                                            background-color: #232b38;
+                                        }
+                                    </style>
+                                    <div class="css-16ddsgm">
+                                        <style data-emotion="css 50ymv3">
+                                            .css-50ymv3 {
+                                                width: 20rem;
+                                                padding: 1rem;
+                                            }
+                                            @media screen and (min-width: 900px) {
+                                                .css-50ymv3 {
+                                                    width: 24rem;
+                                                }
+                                            }
+                                        </style>
+
+                                        <div class="css-50ymv3">
+                                            <style data-emotion="css deazyg">
+                                                .css-deazyg {
+                                                    font-family: Roboto Condensed, system-ui, sans-serif;
+                                                    font-weight: 400;
+                                                    font-size: 1.25rem;
+                                                    line-height: 1.33;
+                                                    margin-bottom: 1rem;
+                                                }
+                                                @media screen and (min-width: 900px) {
+                                                    .css-deazyg {
+                                                        line-height: 1.2;
+                                                    }
+                                                }
+                                            </style>
+                                            <h2 class="chakra-heading css-deazyg"><a class="chakra-link css-1xw4jny" href="https://medium.com/analytics-vidhya/dash-for-beginners-dash-plotly-python-fcd1fe02b749">Dash for Beginners!</h2>
+                                            <style data-emotion="css vk5air">
+                                                .css-vk5air {
+                                                    color: #cbd5e0;
+                                                    overflow: hidden;
+                                                    text-overflow: ellipsis;
+                                                    -webkit-display: -webkit-box;
+                                                    display: -webkit-box;
+                                                    -webkit-box-orient: vertical;
+                                                    -webkit-line-clamp: 4;
+                                                }
+                                            </style>
+                                            <p class="chakra-text css-vk5air">
+                                                <strong>Abstract: </strong>If you are looking for a way to represent your analysis and prediction on a simple and pretty dashboard, then Dash is the answer. Dash is a python framework mostly used for building data visualisation apps. It is written on top of Flask, Plotly.js and React...
+                                            </p>
+                                            <div class="css-k008qs">
+                                                <style data-emotion="css 1tley00">
+                                                    .css-1tley00 {
+                                                        display: -webkit-inline-box;
+                                                        display: -webkit-inline-flex;
+                                                        display: -ms-inline-flexbox;
+                                                        display: inline-flex;
+                                                        -webkit-appearance: none;
+                                                        -moz-appearance: none;
+                                                        -ms-appearance: none;
+                                                        appearance: none;
+                                                        -webkit-align-items: center;
+                                                        -webkit-box-align: center;
+                                                        -ms-flex-align: center;
+                                                        align-items: center;
+                                                        -webkit-box-pack: center;
+                                                        -ms-flex-pack: center;
+                                                        -webkit-justify-content: center;
+                                                        justify-content: center;
+                                                        -webkit-transition: all 250ms;
+                                                        transition: all 250ms;
+                                                        -webkit-user-select: none;
+                                                        -moz-user-select: none;
+                                                        -ms-user-select: none;
+                                                        user-select: none;
+                                                        position: relative;
+                                                        white-space: nowrap;
+                                                        vertical-align: middle;
+                                                        outline: none;
+                                                        width: auto;
+                                                        line-height: 1.2;
+                                                        border-radius: 0.375rem;
+                                                        font-weight: 600;
+                                                        height: 2rem;
+                                                        min-width: 2rem;
+                                                        font-size: 0.875rem;
+                                                        padding-left: 0.75rem;
+                                                        padding-right: 0.75rem;
+                                                        background: rgba(255, 255, 255, 0.08);
+                                                        margin-top: 1rem;
+                                                    }
+                                                    .css-1tley00:focus,
+                                                    .css-1tley00[data-focus] {
+                                                        box-shadow: none;
+                                                    }
+                                                    .css-1tley00[disabled],
+                                                    .css-1tley00[disabled]:focus,
+                                                    .css-1tley00[disabled]:hover,
+                                                    .css-1tley00[aria-disabled="true"],
+                                                    .css-1tley00[aria-disabled="true"]:focus,
+                                                    .css-1tley00[aria-disabled="true"]:hover,
+                                                    .css-1tley00[data-disabled],
+                                                    .css-1tley00[data-disabled]:focus,
+                                                    .css-1tley00[data-disabled]:hover {
+                                                        opacity: 0.4;
+                                                        cursor: not-allowed;
+                                                        box-shadow: none;
+                                                    }
+                                                    .css-1tley00:hover,
+                                                    .css-1tley00[data-hover] {
+                                                        -webkit-text-decoration: none;
+                                                        text-decoration: none;
+                                                    }
+                                                    .css-1tley00:active,
+                                                    .css-1tley00[data-active] {
+                                                        background: rgba(255, 255, 255, 0.24);
+                                                    }
+                                                </style>
+                                                <style data-emotion="css zcq2u">
+                                                    .css-zcq2u {
+                                                        -webkit-transition: all 0.15s ease-out;
+                                                        transition: all 0.15s ease-out;
+                                                        cursor: pointer;
+                                                        -webkit-text-decoration: none;
+                                                        text-decoration: none;
+                                                        outline: none;
+                                                        color: inherit;
+                                                        display: -webkit-inline-box;
+                                                        display: -webkit-inline-flex;
+                                                        display: -ms-inline-flexbox;
+                                                        display: inline-flex;
+                                                        -webkit-appearance: none;
+                                                        -moz-appearance: none;
+                                                        -ms-appearance: none;
+                                                        appearance: none;
+                                                        -webkit-align-items: center;
+                                                        -webkit-box-align: center;
+                                                        -ms-flex-align: center;
+                                                        align-items: center;
+                                                        -webkit-box-pack: center;
+                                                        -ms-flex-pack: center;
+                                                        -webkit-justify-content: center;
+                                                        justify-content: center;
+                                                        -webkit-transition: all 250ms;
+                                                        transition: all 250ms;
+                                                        -webkit-user-select: none;
+                                                        -moz-user-select: none;
+                                                        -ms-user-select: none;
+                                                        user-select: none;
+                                                        position: relative;
+                                                        white-space: nowrap;
+                                                        vertical-align: middle;
+                                                        outline: none;
+                                                        width: auto;
+                                                        line-height: 1.2;
+                                                        border-radius: 0.375rem;
+                                                        font-weight: 600;
+                                                        height: 2rem;
+                                                        min-width: 2rem;
+                                                        font-size: 0.875rem;
+                                                        padding-left: 0.75rem;
+                                                        padding-right: 0.75rem;
+                                                        background: rgba(255, 255, 255, 0.08);
+                                                        margin-top: 1rem;
+                                                    }
+                                                    .css-zcq2u:hover,
+                                                    .css-zcq2u[data-hover] {
+                                                        -webkit-text-decoration: underline;
+                                                        text-decoration: underline;
+                                                    }
+                                                    .css-zcq2u:focus,
+                                                    .css-zcq2u[data-focus] {
+                                                        box-shadow: none;
+                                                    }
+                                                    .css-zcq2u:focus,
+                                                    .css-zcq2u[data-focus] {
+                                                        box-shadow: none;
+                                                    }
+                                                    .css-zcq2u[disabled],
+                                                    .css-zcq2u[disabled]:focus,
+                                                    .css-zcq2u[disabled]:hover,
+                                                    .css-zcq2u[aria-disabled="true"],
+                                                    .css-zcq2u[aria-disabled="true"]:focus,
+                                                    .css-zcq2u[aria-disabled="true"]:hover,
+                                                    .css-zcq2u[data-disabled],
+                                                    .css-zcq2u[data-disabled]:focus,
+                                                    .css-zcq2u[data-disabled]:hover {
+                                                        opacity: 0.4;
+                                                        cursor: not-allowed;
+                                                        box-shadow: none;
+                                                    }
+                                                    .css-zcq2u:hover,
+                                                    .css-zcq2u[data-hover] {
+                                                        -webkit-text-decoration: none;
+                                                        text-decoration: none;
+                                                    }
+                                                    .css-zcq2u:active,
+                                                    .css-zcq2u[data-active] {
+                                                        background: rgba(255, 255, 255, 0.24);
+                                                    }
+                                                </style>
+                                                <a target="_blank" rel="noopener noreferrer" class="chakra-link chakra-button css-zcq2u" href="https://medium.com/analytics-vidhya/dash-for-beginners-dash-plotly-python-fcd1fe02b749">
+                                                    Read
+                                                    <style data-emotion="css 1oeb2oe">
+                                                        .css-1oeb2oe {
+                                                            -webkit-margin-start: 0.5rem;
+                                                            margin-inline-start: 0.5rem;
+                                                        }
+                                                    </style>
+                                                    <span class="chakra-button__icon css-1oeb2oe">
+                                                        <svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 20 20" aria-hidden="true" focusable="false" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg">
+                                                            <path d="M11 3a1 1 0 100 2h2.586l-6.293 6.293a1 1 0 101.414 1.414L15 6.414V9a1 1 0 102 0V4a1 1 0 00-1-1h-5z"></path>
+                                                            <path d="M5 5a2 2 0 00-2 2v8a2 2 0 002 2h8a2 2 0 002-2v-3a1 1 0 10-2 0v3H5V7h3a1 1 0 000-2H5z"></path>
+                                                        </svg>
+                                                    </span>
+                                                </a>
+                                                <style data-emotion="css 1cws34e">
+                                                    .css-1cws34e {
+                                                        display: -webkit-inline-box;
+                                                        display: -webkit-inline-flex;
+                                                        display: -ms-inline-flexbox;
+                                                        display: inline-flex;
+                                                        -webkit-appearance: none;
+                                                        -moz-appearance: none;
+                                                        -ms-appearance: none;
+                                                        appearance: none;
+                                                        -webkit-align-items: center;
+                                                        -webkit-box-align: center;
+                                                        -ms-flex-align: center;
+                                                        align-items: center;
+                                                        -webkit-box-pack: center;
+                                                        -ms-flex-pack: center;
+                                                        -webkit-justify-content: center;
+                                                        justify-content: center;
+                                                        -webkit-transition: all 250ms;
+                                                        transition: all 250ms;
+                                                        -webkit-user-select: none;
+                                                        -moz-user-select: none;
+                                                        -ms-user-select: none;
+                                                        user-select: none;
+                                                        position: relative;
+                                                        white-space: nowrap;
+                                                        vertical-align: middle;
+                                                        outline: none;
+                                                        width: auto;
+                                                        line-height: 1.2;
+                                                        border-radius: 0.375rem;
+                                                        font-weight: 400;
+                                                        height: 2rem;
+                                                        min-width: 2rem;
+                                                        font-size: 0.875rem;
+                                                        padding-left: 0.75rem;
+                                                        padding-right: 0.75rem;
+                                                        background: rgba(255, 255, 255, 0.08);
+                                                        margin-top: 1rem;
+                                                        margin-left: 1rem;
+                                                    }
+                                                    .css-1cws34e:focus,
+                                                    .css-1cws34e[data-focus] {
+                                                        box-shadow: none;
+                                                    }
+                                                    .css-1cws34e[disabled],
+                                                    .css-1cws34e[disabled]:focus,
+                                                    .css-1cws34e[disabled]:hover,
+                                                    .css-1cws34e[aria-disabled="true"],
+                                                    .css-1cws34e[aria-disabled="true"]:focus,
+                                                    .css-1cws34e[aria-disabled="true"]:hover,
+                                                    .css-1cws34e[data-disabled],
+                                                    .css-1cws34e[data-disabled]:focus,
+                                                    .css-1cws34e[data-disabled]:hover {
+                                                        opacity: 0.4;
+                                                        cursor: not-allowed;
+                                                        box-shadow: none;
+                                                    }
+                                                    .css-1cws34e:hover,
+                                                    .css-1cws34e[data-hover] {
+                                                        -webkit-text-decoration: none;
+                                                        text-decoration: none;
+                                                    }
+                                                    .css-1cws34e:active,
+                                                    .css-1cws34e[data-active] {
+                                                        background: rgba(255, 255, 255, 0.24);
+                                                    }
+                                                </style>
+                                                <style data-emotion="css 1dw4f73">
+                                                    .css-1dw4f73 {
+                                                        -webkit-transition: all 0.15s ease-out;
+                                                        transition: all 0.15s ease-out;
+                                                        cursor: pointer;
+                                                        -webkit-text-decoration: none;
+                                                        text-decoration: none;
+                                                        outline: none;
+                                                        color: inherit;
+                                                        display: -webkit-inline-box;
+                                                        display: -webkit-inline-flex;
+                                                        display: -ms-inline-flexbox;
+                                                        display: inline-flex;
+                                                        -webkit-appearance: none;
+                                                        -moz-appearance: none;
+                                                        -ms-appearance: none;
+                                                        appearance: none;
+                                                        -webkit-align-items: center;
+                                                        -webkit-box-align: center;
+                                                        -ms-flex-align: center;
+                                                        align-items: center;
+                                                        -webkit-box-pack: center;
+                                                        -ms-flex-pack: center;
+                                                        -webkit-justify-content: center;
+                                                        justify-content: center;
+                                                        -webkit-transition: all 250ms;
+                                                        transition: all 250ms;
+                                                        -webkit-user-select: none;
+                                                        -moz-user-select: none;
+                                                        -ms-user-select: none;
+                                                        user-select: none;
+                                                        position: relative;
+                                                        white-space: nowrap;
+                                                        vertical-align: middle;
+                                                        outline: none;
+                                                        width: auto;
+                                                        line-height: 1.2;
+                                                        border-radius: 0.375rem;
+                                                        font-weight: 400;
+                                                        height: 2rem;
+                                                        min-width: 2rem;
+                                                        font-size: 0.875rem;
+                                                        padding-left: 0.75rem;
+                                                        padding-right: 0.75rem;
+                                                        background: rgba(255, 255, 255, 0.08);
+                                                        margin-top: 1rem;
+                                                        margin-left: 1rem;
+                                                    }
+                                                    .css-1dw4f73:hover,
+                                                    .css-1dw4f73[data-hover] {
+                                                        -webkit-text-decoration: underline;
+                                                        text-decoration: underline;
+                                                    }
+                                                    .css-1dw4f73:focus,
+                                                    .css-1dw4f73[data-focus] {
+                                                        box-shadow: none;
+                                                    }
+                                                    .css-1dw4f73:focus,
+                                                    .css-1dw4f73[data-focus] {
+                                                        box-shadow: none;
+                                                    }
+                                                    .css-1dw4f73[disabled],
+                                                    .css-1dw4f73[disabled]:focus,
+                                                    .css-1dw4f73[disabled]:hover,
+                                                    .css-1dw4f73[aria-disabled="true"],
+                                                    .css-1dw4f73[aria-disabled="true"]:focus,
+                                                    .css-1dw4f73[aria-disabled="true"]:hover,
+                                                    .css-1dw4f73[data-disabled],
+                                                    .css-1dw4f73[data-disabled]:focus,
+                                                    .css-1dw4f73[data-disabled]:hover {
+                                                        opacity: 0.4;
+                                                        cursor: not-allowed;
+                                                        box-shadow: none;
+                                                    }
+                                                    .css-1dw4f73:hover,
+                                                    .css-1dw4f73[data-hover] {
+                                                        -webkit-text-decoration: none;
+                                                        text-decoration: none;
+                                                    }
+                                                    .css-1dw4f73:active,
+                                                    .css-1dw4f73[data-active] {
+                                                        background: rgba(255, 255, 255, 0.24);
+                                                    }
+                                                </style>
+                                            </div>
+                                        </div>
+                                        <style data-emotion="css stl5ul">
+                                            .css-stl5ul {
+                                                display: none;
+                                                height: 100%;
+                                                width: 150px;
+                                                border-top-right-radius: 8px;
+                                                border-bottom-right-radius: 8px;
+                                            }
+                                            @media screen and (min-width: 600px) {
+                                                .css-stl5ul {
+                                                    display: block;
+                                                }
+                                            }
+                                        </style>
+
+                                    </div>
+                                </li>
+                                <li class="chakra-wrap__listitem css-ziz9pt">
+                                    <div class="css-16ddsgm">
+                                        <div class="css-50ymv3">
+                                            <h2 class="chakra-heading css-deazyg"><a class="chakra-link css-1xw4jny" href="https://www.analyticsvidhya.com/blog/2021/06/lstm-for-text-classification/">LSTM in Text Classification</h2>
+                                            <p class="chakra-text css-vk5air">
+                                                <strong>Abstract: </strong>With an emerging field of deep learning, performing complex operations has become faster
+                                                and easier. As you start exploring the field of deep learning, you are definitely going to come across words like Neural networks, recurrent neural networks, LSTM, GRU, etc. This article explains LSTM Python and its use in Text Classification. So what is LSTM? And how can it be used?
+
+                                            </p>
+                                            <div class="css-k008qs">
+                                                <a target="_blank" rel="noopener noreferrer" class="chakra-link chakra-button css-zcq2u" href="https://www.analyticsvidhya.com/blog/2021/06/lstm-for-text-classification/">
+                                                    Read
+                                                    <span class="chakra-button__icon css-1oeb2oe">
+                                                        <svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 20 20" aria-hidden="true" focusable="false" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg">
+                                                            <path d="M11 3a1 1 0 100 2h2.586l-6.293 6.293a1 1 0 101.414 1.414L15 6.414V9a1 1 0 102 0V4a1 1 0 00-1-1h-5z"></path>
+                                                            <path d="M5 5a2 2 0 00-2 2v8a2 2 0 002 2h8a2 2 0 002-2v-3a1 1 0 10-2 0v3H5V7h3a1 1 0 000-2H5z"></path>
+                                                        </svg>
+                                                    </span>
+                                                </a>
+                                            </div>
+                                        </div>
+<!--                                        <img alt="A Brief Survey of Model-Free Deep Reinforcement LearningImage" class="chakra-image__placeholder css-stl5ul" />-->
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+                        <a class="chakra-link chakra-button css-1hji60x" href="https://shraddhashekhar.medium.com/">More Medium Blogs</a>
+                        <a class="chakra-link chakra-button css-1hji60x" href="https://www.analyticsvidhya.com/blog/author/shraddhashekhar/">More AV Blogs</a>
+                    </div>
+
+                    <div class="css-0" id="section6">
+                        <h2 class="chakra-heading css-1hxiveg">Contact Me</h2>
+                        <ul role="list" class="css-px8c62">
+                            <li class="css-0"><p class="chakra-text css-besd1p">Mobile: +1 7169945448</p></li>
+                            <li class="css-0"><p class="chakra-text css-besd1p"><a href="mailto: iamshraddhashekhar@gmail.com">Primary mail:  iamshraddhashekhar@gmail.com</a></p></li>
+                            <li class="css-0"><p class="chakra-text css-besd1p"><a href="mailto: shekhar7@buffalo.edu">Secondary mail: shekhar7@buffalo.edu</a></p></li>
+<!--                            <li class="css-0">Primary mail: iamshraddhashekhar@gmail.com</li>-->
+<!--                            <li class="css-0">Secondary mail: shekhar7@buffalo.edu</li>-->
+
+                        </ul>
+                        <br>
+                    </div>
+                </div>
+            </div>
+            <div id="gatsby-announcer" style="position: absolute; top: 0; width: 1px; height: 1px; padding: 0; overflow: hidden; clip: rect(0, 0, 0, 0); white-space: nowrap; border: 0;" aria-live="assertive" aria-atomic="true"></div>
+        </div>
+        <script id="gatsby-script-loader">
+            /*<![CDATA[*/ window.pagePath = "/"; /*]]>*/
+        </script>
+        <script id="gatsby-chunk-mapping">
+            /*<![CDATA[*/ window.___chunkMapping = {
+                polyfill: ["/polyfill-47fd7be8e4012c78b9a9.js"],
+                app: ["/app-1843ffefc5b524e69db0.js"],
+                "component---src-pages-all-projects-js": ["/component---src-pages-all-projects-js-850d7b86e8f33889898f.js"],
+                "component---src-pages-index-js": ["/component---src-pages-index-js-302c720238b1a8730838.js"],
+                "component---src-pages-resume-js": ["/component---src-pages-resume-js-bfd4c6a79065a1d1663a.js"],
+            }; /*]]>*/
+        </script>
+        <script src="/polyfill-47fd7be8e4012c78b9a9.js" nomodule=""></script>
+        <script src="/component---src-pages-index-js-302c720238b1a8730838.js" async=""></script>
+        <script src="/78febaf89a5145c63b3dd69f5d038a06cb66733f-0b347745e0ed0d6fb464.js" async=""></script>
+        <script src="/446e68f2a176b92e4ab947dd6a265583ae9861f5-cfef72f9a409639f2787.js" async=""></script>
+        <script src="/commons-f38039c83f9248e0f6f9.js" async=""></script>
+        <script src="/d64684d8-0dafd15ed7bd85b9aaec.js" async=""></script>
+        <script src="/05d954cf-17e9c52612af79756b79.js" async=""></script>
+        <script src="/0c428ae2-89d3e8bed617cf891f46.js" async=""></script>
+        <script src="/1bfc9850-56a8082d94d5a0f2dd01.js" async=""></script>
+        <script src="/styles-455b3516bc49bc6504de.js" async=""></script>
+        <script src="/app-1843ffefc5b524e69db0.js" async=""></script>
+        <script src="/framework-0e8501c0599d79803b4b.js" async=""></script>
+        <script src="/webpack-runtime-a9fdbf7a5e8f46290a13.js" async=""></script>
+    </body>
+</html>
